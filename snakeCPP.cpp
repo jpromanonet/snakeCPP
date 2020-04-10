@@ -38,7 +38,8 @@ int main()
 		bool bKeyLeft = false, bKeyRight = false, bKeyLeftOld = false, bKeyRightOld = false;
 
 		while (!bDead) {
-
+			// Frame timer that compensate for the aspect ratio of the command line
+			auto t1 = chrono::system_clock::now();
 		}
 	}
 
