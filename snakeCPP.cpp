@@ -40,6 +40,49 @@ int main()
 		while (!bDead) {
 			// Frame timer that compensate for the aspect ratio of the command line
 			auto t1 = chrono::system_clock::now();
+			while ((chrono::system_clock::now() - t1) < ((nSnakeDirection % 2 == 1) ? 120ms : 200ms)) {
+				
+				// Get the user input
+				bKeyRight = (0x8000 & GetAsyncKeyState((unsigned char)('\x27'))) != 0;
+				bKeyLeft = (0x8000 & GetAsyncKeyState((unsigned char)('\x25'))) != 0;
+
+				if (bKeyRight && !bKeyRightOld) {
+					nSnakeDirection++;
+					if (nSnakeDirection == 4) nSnakeDirection = 0;
+				}
+
+				if (bKeyLeft && !bKeyLeftOld) {
+					nSnakeDirection--;
+					if (nSnakeDirection == -1) nSnakeDirection = 3;
+				}
+
+				bKeyLeftOld = bKeyRight;
+				bKeyLeftOld = bKeyLeft;
+
+			}
+
+			// Game logic!
+
+			// Update the snake position and move the head to the correct place
+			switch (nS)
+			{
+			// Up
+			case 0: 
+				snake.push_front({ snake.front().x, snake.front().y - 1 });
+				break;
+			// Right
+			case 1: 
+				snake.push_front({ snake.front().x + 1, snake.front().y });
+				break;
+			// Down
+			case 2: 
+				snake.push_front({ snake.front().x, snake.front().y + 1 });
+				break;
+			// Left
+			case 3: 
+				snake.push_front({ snake.front().x - 1, snake.front().y });
+				break;
+			}
 		}
 	}
 
