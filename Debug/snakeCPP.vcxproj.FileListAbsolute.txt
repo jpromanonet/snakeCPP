@@ -1,0 +1,2 @@
+D:\git\snakeCPP\snakeCPP\Debug\snakeCPP.exe
+D:\git\snakeCPP\snakeCPP\Debug\snakeCPP.pdb

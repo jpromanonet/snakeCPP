@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{BB8B0587-5999-4066-9F26-1DA96EB6A15C}</ProjectGuid>
+    <ProjectGuid>{24830A3C-06A7-4BB1-A628-FF52B4D7D47E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>snakeCPP</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
